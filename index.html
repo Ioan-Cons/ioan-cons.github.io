@@ -1,13 +1,167 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="ca" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafoli</title>
+    <title>Ioan | Portafoli DAW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Portafoli d'Ioan</h1>
-    <p>Hola! Em dic Ioan i aquest és el meu portafoli personal.</p>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Ioan Marian Constantin</div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre-mi">Sobre mi</a></li>
+                    <li><a href="#experiencia">Experiència</a></li>
+                    <li><a href="#projectes">Projectes</a></li>
+                    <li><button id="theme-btn" class="mode-toggle">🌓</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Hola, sóc <span>Ioan</span></h1>
+            <p>Sóc alumne de 2n de DAW i m'estic formant com a desenvolupador, treballant tant la part de forntend com la de backend.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="sobre-mi" class="card bloc-destacat">
+            <div class="header-bloc">
+                <h2>Sobre mi</h2>
+            </div>
+            <p>Sóc un apassionat de la informàtica i del desenvolupament web.
+                Actualment estudio 2n de DAW i treballo en projectes que inclouen frontend, backend, bases de dades i desplegament al núvol (AWS).
+                M’agrada crear aplicacions eficients, ben estructurades i funcionals, i treballar en equip per resoldre reptes reals.
+                Sempre busco aprendre noves tecnologies i millorar les meves habilitats per aportar solucions innovadores.
+            </p>
+        </section>
+
+        <section id="experiencia" class="card bloc-destacat">
+            <div class="header-bloc">
+                <h2>Experiència</h2>
+            </div>
+
+            <hr class="separator">
+
+            <div class="exp-item">
+                <span class="tag-outline">2021-2024</span>
+                <h3>GM Sistemes Microinformàtics i Xarxes (SMX)</h3>
+                <p>Base tecnològica: Muntatge de servidors, administració de sistemes operatius, xarxes locals i manteniment d'equips.</p>
+            </div>
+
+            <hr class="separator">
+
+            <div class="exp-item">
+                <span class="tag-outline">2024 - en procés</span>
+                <h3>GS Desenvolupament d'Aplicacions Web (DAW)</h3>
+                <p>Especialització en llenguatges de programació (PHP, Java, JavaScript, C#), frameworks i desplegament d'aplicacions.</p>
+            </div>
+
+        </section>
+
+        <section id="experienciaLaboral" class="card bloc-destacat">
+            <div class="header-bloc">
+                <h2>Experiència Laboral / Pràctiques</h2>
+            </div>
+
+            <div class="exp-item">
+                <span class="tag">Octubre 2024 - Actualitat</span>
+                <h3>Desenvolupador Web (Dual) Nexus Geographics</h3>
+                <p>Treballant en projectes de caire geogràfic i sistemes d'informació. Les meves tasques principals inclouen:</p>
+                <ul class="exp-list-detall">
+                    <li>Desenvolupament del Frontend amb <strong>Angular</strong>, creant interfícies dinàmiques i eficients.</li>
+                    <li>Consum i integració d'<strong>APIs</strong> per a la gestió de dades en temps real.</li>
+                    <li>Col·laboració en el manteniment i escalabilitat d'aplicacions web corporatives.</li>
+                </ul>
+            </div>
+
+            <hr class="separator">
+
+            <div class="exp-item">
+                <span class="tag-outline">Octubre 2023 - Abril 2024</span>
+                <h3>Tècnic de Sistemes Ajuntament de Sils</h3>
+                <p>Realització de 386 hores de pràctiques del cicle SMX, enfocades al manteniment d'infraestructures:</p>
+                <ul class="exp-list-detall">
+                    <li>Resolució d'incidències tècniques i suport als usuaris.</li>
+                    <li>Manteniment preventiu i correctiu d'equips informàtics de l'ajuntament.</li>
+                    <li>Instal·lació i configuració de programari, xarxes i perifèrics.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projectes">
+            <h2 class="section-title">Projectes</h2>
+            <div class="project-grid">
+                
+                <div class="card bloc-destacat project-main">
+                    <div class="header-bloc">
+                        <h3>Sylvanian Families - Botiga Online</h3>
+                        <div class="contact-minibar">
+                            <a href="https://github.com/DAM-DAW-M-Optatiu/grup-a-backend-Ioan-Cons.git" target="_blank">💻 Repositori</a>
+                            <a href="SylvanianLand.html" target="_blank">🌐 Veure Web</a>
+                        </div>
+                    </div>
+                    <p>Desenvolupament d'una plataforma d'e-commerce completa per a la venda de figures col·leccionables. El projecte va evolucionar d'un disseny estàtic a una aplicació web dinàmica.</p>
+                    
+                    <div class="tech-tags">
+                        <span class="tag-tech">HTML</span>
+                        <span class="tag-tech">CSS</span>
+                        <span class="tag-tech">JavaScript</span>
+                        <span class="tag-tech">PHP</span>
+                        <span class="tag-tech">MySQL</span>
+                    </div>
+
+                    <ul class="exp-list-detall">
+                        <li><strong>Backend:</strong> Implementació de sistema de login, registre d'usuaris i gestió de sessions.</li>
+                        <li><strong>Frontend:</strong> Interfície interactiva amb selector de mode dia/nit i llista de la compra funcional amb JS.</li>
+                        <li><strong>Base de dades:</strong> Disseny i connexió amb MySQL per a la persistència de dades d'usuaris i productes.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="contacte" class="container">
+        <h2 class="section-title">Parlem?</h2>
+        <div class="contact-grid">
+            <a href="mailto:a2409811@institutmontilivi.cat" class="card bloc-destacat contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Correu Electrònic</h3>
+                <p>a2409811@institutmontilivi.cat</p>
+                <span class="contact-action">Envia un missatge →</span>
+            </a>
+
+            <a href="https://github.com/Ioan-Cons/ProjecteWebEstatica_Ioan_Constantin.git" target="_blank" class="card bloc-destacat contact-card">
+                <div class="contact-icon">💻</div>
+                <h3>GitHub</h3>
+                <p>Projectes i Codi</p>
+                <span class="contact-action">Explora el repo →</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>Ioan Marian Constantin - 2026</strong></p>
+            <p>a2409811@institutmontilivi.cat</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('theme-btn');
+        const html = document.documentElement;
+        btn.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+        });
+    </script>
 </body>
 </html>
