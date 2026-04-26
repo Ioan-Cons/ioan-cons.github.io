@@ -443,3 +443,35 @@ footer { text-align: center; padding: 60px 0; opacity: 0.6; font-size: 0.85rem; 
         justify-content: center;
     }
 }
+
+.card, .bloc-destacat, .project-main, .contact-card {
+    background-color: #121212 !important; /* Negre total */
+    background-image: none !important;    /* Fora gradients */
+    border: 1px solid #343a40 !important; /* Vora fina gris */
+}
+
+/* 2. ARREGLAR ELS BOTONS DEL HERO (que ara es veuen liles i petits) */
+.hero-cta {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-primary, .btn-secondary {
+    text-decoration: none !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #20c997 !important; /* Verd */
+    color: #121212 !important;            /* Text negre */
+}
+
+.btn-secondary {
+    background-color: transparent !important;
+    color: #20c997 !important;            /* Text verd */
+    border: 2px solid #20c997 !important;
+}
