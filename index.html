@@ -25,10 +25,16 @@
     </header>
 
     <section id="hero">
-        <div class="container">
-            <h1>Hola, sóc <span>Ioan</span></h1>
-            <p>Sóc alumne de 2n de DAW i m'estic formant com a desenvolupador, treballant tant la part de forntend com la de backend.</p>
+    <div class="container hero-flex">
+        <div class="hero-text">
+            <h1>Hola, sóc <span>Ioan Marian Constantin</span></h1>
+            <p><strong>Tècnic en Desenvolupament d'Aplicacions Web (GS DAW).</strong> Especialitzat en solucions Fullstack, Backend (PHP/Symfony) i Frontend (Vue.js/Angular).</p>
+            <div class="hero-cta">
+                <a href="CV_Ioan_Constantin.pdf" target="_blank" class="btn-primary">📄 Veure/Baixar CV</a>
+                <a href="video.html" class="btn-secondary">🎥 Videocurrículum</a>
+            </div>  
         </div>
+    </div>
     </section>
 
     <main class="container">
@@ -61,7 +67,7 @@
             <div class="exp-item">
                 <span class="tag-outline">2024 - en procés</span>
                 <h3>GS Desenvolupament d'Aplicacions Web (DAW)</h3>
-                <p>Especialització en llenguatges de programació (PHP, Java, JavaScript, C#), frameworks i desplegament d'aplicacions.</p>
+                <p>Especialització en llenguatges de programació (PHP, JavaScript, C#), frameworks i desplegament d'aplicacions.</p>
             </div>
 
         </section>
@@ -104,8 +110,8 @@
                     <div class="header-bloc">
                         <h3>Sylvanian Families - Botiga Online</h3>
                         <div class="contact-minibar">
-                            <a href="https://github.com/DAM-DAW-M-Optatiu/grup-a-backend-Ioan-Cons.git" target="_blank">💻 Repositori</a>
-                            <a href="SylvanianLand.html" target="_blank">🌐 Veure Web</a>
+                            <a href="https://github.com/DAM-DAW-M-Optatiu/grup-a-web-estatica-Ioan-Cons" target="_blank">💻 Repositori</a>
+                            <a href="https://grup-a-web-estatica-ioan-cons.vercel.app/" target="_blank">🌐 Veure Web</a>
                         </div>
                     </div>
                     <p>Desenvolupament d'una plataforma d'e-commerce completa per a la venda de figures col·leccionables. El projecte va evolucionar d'un disseny estàtic a una aplicació web dinàmica.</p>
@@ -125,6 +131,28 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="card bloc-destacat project-main">
+                <div class="header-bloc">
+                    <h3>FoodMap</h3>
+                    <span class="tag">En desenvolupament 🚀</span>
+                </div>
+                <p>Projecte avançat integrant un frontend modern amb Vue.js i un backend professional amb Symfony sota una arquitectura d'API REST.</p>
+                
+                <div class="tech-tags">
+                    <span class="tag-tech">Vue.js</span>
+                    <span class="tag-tech">Symfony</span>
+                    <span class="tag-tech">API REST</span>
+                    <span class="tag-tech">AWS</span>
+                </div>
+
+                <ul class="exp-list-detall">
+                    <li><strong>Frontend:</strong> Desenvolupament de components reactius i gestió d'estat.</li>
+                    <li><strong>Backend:</strong> Creació d'endpoints segurs i lògica de negoci complexa.</li>
+                    <li><strong>Cloud:</strong> Configuració i desplegament en instàncies d'Amazon Web Services.</li>
+                </ul>
+            </div>
+
         </section>
     </main>
 
@@ -157,11 +185,23 @@
     <script>
         const btn = document.getElementById('theme-btn');
         const html = document.documentElement;
-        btn.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-        });
+
+        // 1. Carregar el tema guardat quan s'obre la pàgina
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        if(btn) btn.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        // 2. Escoltador per al botó (només si el botó existeix a la pàgina)
+        if(btn) {
+            btn.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme); // Guarda la tria
+                btn.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
     </script>
 </body>
 </html>

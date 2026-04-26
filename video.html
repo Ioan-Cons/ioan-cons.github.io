@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ca" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videocurrículum | Ioan</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .video-wrapper { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 0;
+        }
+        .btn-back-nav {
+            background-color: var(--accent);
+            color: #000;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            text-transform: none;
+            display: inline-block;
+            border: none;
+        }
+        .btn-back-nav:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        ul { 
+            list-style: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .card.bloc-destacat::before {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Ioan Marian Constantin</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="btn-back-nav">Tornar al Portafoli</a></li>
+                    <li><button id="theme-btn" class="mode-toggle">🌓</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="text-align: center; padding: 10px 20px 40px 20px;">
+        <h1 style="color: var(--accent); margin-bottom: 10px; text-transform: none;">El meu videocurrículum</h1>
+        
+        <div class="video-wrapper">
+            <div class="card bloc-destacat" style="padding: 10px; border: 2px solid var(--accent); border-radius: 12px; margin-bottom: 0;">
+                <video width="100%" controls style="border-radius: 8px; display: block;">
+                    <source src="https://github.com/Ioan-Cons/ioan-cons.github.io/releases/download/v1.0/vIDEOcurriculum.mp4" type="video/mp4">
+                    El teu navegador no suporta vídeos.
+                </video>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <a href="index.html" class="btn-secondary" style="display: inline-block; padding: 10px 25px; border-radius: 30px; text-decoration: none; text-transform: none;">
+                Tornar al Portafoli
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>Ioan Marian Constantin - 2026</strong></p>
+            <p>a2409811@institutmontilivi.cat</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('theme-btn');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        btn.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        btn.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            btn.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>

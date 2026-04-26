@@ -5,10 +5,9 @@
     --accent: #fd7e14;
     --border: #dee2e6;
 }
-
 :root[data-theme="dark"] {
     --bg: #121212;
-    --card: #1e1e1e;
+    --card: #121212;  /* ABANS era #1e1e1e, ara és igual al fons (negre) */
     --text: #e9ecef;
     --accent: #20c997;
     --border: #343a40;
@@ -78,18 +77,30 @@ nav a {
     6px; opacity: 0.5; 
 }
 
-#hero { padding: 80px 0 40px 0; }
+#hero {
+    padding: 30px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra tot el contingut del hero verticalment */
+    text-align: center;  /* Centra el títol i el paràgraf */
+}
 #hero h1 { font-size: 3rem; font-weight: 800; }
 #hero h1 span { color: var(--accent); }
-#hero p { font-size: 1.1rem; opacity: 0.7; }
+#hero p { 
+    font-size: 1.1rem; 
+    opacity: 0.7; 
+    margin: 0 auto 30px auto; /* Centra el bloc del paràgraf i dóna espai inferior */
+    max-width: 700px;         /* Limita l'amplada perquè la lectura sigui més còmoda */
+}
 
 .card { 
-    background: var(--card); 
+    background: var(--card); /* Aquí agafa el gris #1e1e1e */
     padding: 30px; 
     border-radius: 8px; 
     margin-bottom: 25px; 
     border: 1px solid var(--border); 
     position: relative; 
+    overflow: hidden; /* Perquè la línia verda no surti del radi */
 }
 
 .bloc-destacat::before { 
@@ -166,14 +177,30 @@ h2 {
 
 /* PROJECTES */
 .section-title { 
-    margin: 40px 0 20px 0; 
-    font-size: 1.1rem; 
-    opacity: 0.5; 
+    margin: 60px 0 30px 0; 
+    font-size: 1.8rem;       /* Més gran per marcar bé l'inici de secció */
+    font-weight: 800;
+    color: var(--accent);    /* El color verd/taronja destaca molt més */
     text-align: center; 
+    text-transform: uppercase;
+    letter-spacing: 1px;     /* Reduïm l'espaiat perquè es llegeixi millor */
 }
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.project-main {
+    grid-column: 1 / -1; /* Si vols que el primer projecte ocupi tota la fila */
+    background: var(--card); /* Força el mateix gris que la resta */
+}
+
 .project-grid { 
     display: grid; 
-    grid-template-columns: 1fr 1fr; gap: 20px; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
 }
 
 .separator {
@@ -298,4 +325,122 @@ footer { text-align: center; padding: 60px 0; opacity: 0.6; font-size: 0.85rem; 
 @media (max-width: 600px) {
     .header-bloc { flex-direction: column; align-items: flex-start; }
     .project-grid { grid-template-columns: 1fr; }
+}
+
+.header-bloc {
+    display: flex;
+    justify-content: space-between; /* Això separa el títol dels botons */
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px; /* Espai entre el botó i la etiqueta */
+    align-items: center;
+}
+
+/* Opcional: Perquè el botó de Veure Web no sembli un text simple */
+.btn-veure-web {
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.1); /* Un fons suau */
+    border: 1px solid #444;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+.btn-veure-web:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #00ff88; /* Color verd de la teva temàtica */
+}
+
+/* Layout del Hero */
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+/* Foto tipus DNI */
+.profile-pic {
+    width: 220px;
+    height: 220px;
+    border-radius: 12px; /* Queda més modern que circular per a un portafoli de programador */
+    border: 3px solid #00ff88;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor de botons */
+.hero-cta {
+    margin-top: 35px;
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Assegura que els botons estiguin al centre */
+    width: 100%;
+}
+
+/* Botó Descarregar CV (Verd ple) */
+.btn-primary {
+    background: var(--accent);      /* Farà servir Taronja en Light i Verd en Dark */
+    color: var(--bg);               /* El text serà del color del fons per contrastar */
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s ease;
+    border: 2px solid var(--accent);
+    display: inline-block;          /* Perquè el padding funcioni bé */
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+}
+
+/* Botó Videocurrículum (Només vora) */
+.btn-secondary {
+    background: transparent;
+    color: var(--accent);           /* El text serà Taronja en Light i Verd en Dark */
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 800;
+    text-decoration: none;
+    border: 2px solid var(--accent);
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background: var(--accent);
+    color: var(--bg);
+    transform: translateY(-2px);
+}
+
+/* Contenidor de Vídeo */
+.video-container {
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+/* Adaptació per a mòbils */
+@media (max-width: 768px) {
+    .hero-flex {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-cta {
+        justify-content: center;
+    }
 }
