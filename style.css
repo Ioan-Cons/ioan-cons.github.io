@@ -3,14 +3,15 @@
     --card: #f8f9fa;
     --text: #212529;
     --accent: #fd7e14;
-    --border: #dee2e6;
+    --border: #e0e0e0;
 }
+
 :root[data-theme="dark"] {
     --bg: #121212;
     --card: #121212;
     --text: #e9ecef;
     --accent: #20c997;
-    --border: #343a40;
+    --border: #333333;
 }
 
 /* BASE */
@@ -403,8 +404,8 @@ footer { text-align: center; padding: 60px 0; opacity: 0.6; font-size: 0.85rem; 
 }
 
 .btn-primary:hover {
-    background: transparent;
-    color: var(--accent);
+    transform: translateY(-2px);
+    background-color: var(--accent);
 }
 
 .btn-secondary {
@@ -445,9 +446,9 @@ footer { text-align: center; padding: 60px 0; opacity: 0.6; font-size: 0.85rem; 
 }
 
 .card, .bloc-destacat, .project-main, .contact-card {
-    background-color: #121212 !important; /* Negre total */
+    background-color: var(--card) !important; /* Negre total */
     background-image: none !important;    /* Fora gradients */
-    border: 1px solid #343a40 !important; /* Vora fina gris */
+    border: 1px solid var(--border) !important; /* Vora fina gris */
 }
 
 /* 2. ARREGLAR ELS BOTONS DEL HERO (que ara es veuen liles i petits) */
@@ -470,8 +471,28 @@ footer { text-align: center; padding: 60px 0; opacity: 0.6; font-size: 0.85rem; 
     color: #121212 !important;            /* Text negre */
 }
 
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .btn-secondary {
     background-color: transparent !important;
-    color: #20c997 !important;            /* Text verd */
-    border: 2px solid #20c997 !important;
+    color: var(--accent) !important; /* Ara canviarà a taronja en clar i verd en fosc */
+    border: 2px solid var(--accent) !important;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent) !important;
+    color: var(--bg) !important; /* El text es torna del color del fons (blanc o negre) */
+    transform: translateY(-2px);
+}
+
+.btn-rounded {
+    padding: 10px 25px;
+    border-radius: 30px !important;
+    text-decoration: none;
+    display: inline-block;
 }
